@@ -15,24 +15,24 @@ import org.slf4j.LoggerFactory;
 import simpleController12.ViewContainer;
 
 
-
-public class AbstractViewContainer implements ViewContainer{
+//https://github.com/mariogarcia/viewa/blob/c39f7f46dc39908bd23cd4ded0b60c5f555617b8/core/src/main/java/org/viewaframework/view/AbstractViewContainer.java
+public abstract class AbstractViewContainer implements ViewContainer{
 	private static final Logger logger = LoggerFactory.getLogger(AbstractViewContainer.class);
 	private JRootPane 								rootPane;
 	//application
-	public JFrame frame;
+	private String 									id;
+	private String									title;
 	public AbstractViewContainer() {
 		super();
 		this.getContentPane().setLayout(new BorderLayout());
 	}
-	public JFrame getFrame() {
-		return frame;
+	
+	public void setId(String id) {
+		this.id = id;
 	}
-
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-
 	@Override
 	public JRootPane getRootPane() {
 		logger.info("get_root_pane");
